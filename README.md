@@ -1,3 +1,19 @@
+# heroku
+
+```
+heroku create -b https://github.com/kr/heroku-buildpack-go.git
+echo "web: $(basename `pwd`)" > Procfile
+```
+
+# godeps は階層が重要？
+
+```
+mkdir -p src/github.com/osdakira/qiita_webhook
+cp main.go src/github.com/osdakira/qiita_webhook
+cd src/github.com/osdakira/qiita_webhook
+godeps save
+```
+
 # インストールした手順
 
 ```
@@ -12,13 +28,6 @@ go get github.com/pilu/fresh
 fresh # shotgun みたいな webserver 起動
 
 go get github.com/tnantoka/chatsworth
-```
-
-# heroku
-
-```
-heroku create -b https://github.com/kr/heroku-buildpack-go.git
-echo "web: $(basename `pwd`)" > Procfile
 ```
 
 # godeps うまく動かない
