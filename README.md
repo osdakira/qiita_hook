@@ -14,6 +14,13 @@ fresh # shotgun みたいな webserver 起動
 go get github.com/tnantoka/chatsworth
 ```
 
+# heroku
+
+```
+heroku create -b https://github.com/kr/heroku-buildpack-go.git
+echo "web: $(basename `pwd`)" > Procfile
+```
+
 # godeps うまく動かない
 
 ```
