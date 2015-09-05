@@ -22,3 +22,12 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# direnv
+.direnv
+/direnv
+/direnv.test
+/dist
+/site
+/test/allow
+man/*.html
