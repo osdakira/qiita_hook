@@ -5,6 +5,8 @@ brew install go
 brew install direnv
 go get github.com/zenazn/goji
 go run main.go
+
+go get github.com/bitly/go-simplejson
 ```
 
 # godeps うまく動かない
