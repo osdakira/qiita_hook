@@ -1,0 +1,12 @@
+{
+  "item": {
+    "title": "タイトル",
+    "url": "http://qiita.com/hoge",
+    "user": {
+      "url_name": "osdakira"
+    },
+    "tags": [
+      { "name": "manon" }
+    ]
+  }
+}

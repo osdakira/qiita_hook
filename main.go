@@ -3,35 +3,39 @@ package main
 import (
 	"fmt"
 	"github.com/bitly/go-simplejson"
+	"log"
 	"net/http"
 
 	"github.com/zenazn/goji"
 	"github.com/zenazn/goji/web"
 )
 
-func isSaveptTag(tags *simplejson.Json) bool {
-	// for i := 0; i < len(tags); i++ {
-	// 	tagName := tags[i].Get("name")
-	// 	if tagName == "savept" {
-	// 		return true
-	// 	}
-	// }
+func isSaveptTag(tagsJs *simplejson.Json) bool {
+	fmt.Printf("%#v", tagsJs)
+	tagArray, _ := tagsJs.Array()
+	for i := 0; i < len(tagArray); i++ {
+		tagName, _ := tagsJs.GetIndex(i).Get("name").String()
+		fmt.Printf("%#v", tagName)
+		if tagName == "savept" {
+			return true
+		}
+	}
 	return false
 }
 
 func webhook(c web.C, w http.ResponseWriter, r *http.Request) {
-	js, _ := simplejson.NewFromReader(r.Body)
+	js, err := simplejson.NewFromReader(r.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Printf("%#v", js)
-
-	tags := js.Get("tags")
-	fmt.Printf("%#v", tags)
-
-	// if isSaveptTag(tags) {
-	// 	return
-	// }
-
-	// fmt.Printf("%#v", js)
 	item := js.Get("item")
+
+	tags := item.Get("tags")
+	if !isSaveptTag(tags) {
+		return
+	}
+
 	title, _ := item.Get("title").String()
 	url, _ := item.Get("url").String()
 	user := item.Get("user")
