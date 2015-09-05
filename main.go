@@ -39,8 +39,8 @@ func webhook(c web.C, w http.ResponseWriter, r *http.Request) {
 	title, _ := item.Get("title").String()
 	url, _ := item.Get("url").String()
 	user := item.Get("user")
-	// fmt.Printf("%#v", user)
 	user_name, _ := user.Get("url_name").String()
+
 	fmt.Fprintf(w, "%s, %s, %s", title, url, user_name)
 }
 
