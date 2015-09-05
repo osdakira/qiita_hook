@@ -1,18 +1,3 @@
-# direnv で GOPATH を制御しないバージョン
-
-ライブラリは、共通ディレクトリに入る
-
-```
-export GOPATH="$HOME/.gopath"
-export PATH=$PATH:$GOPATH/bin
-go get github.com/tools/godep
-go get github.com/zenazn/goji
-
-```
-
-
-# ↓↓↓ Version 1
-
 # インストールした手順
 
 ```
