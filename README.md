@@ -7,8 +7,11 @@ go get github.com/zenazn/goji
 # go run main.go
 
 go get github.com/bitly/go-simplejson
+
 go get github.com/pilu/fresh
-fresh
+fresh # shotgun みたいな webserver 起動
+
+go get github.com/tnantoka/chatsworth
 ```
 
 # godeps うまく動かない
