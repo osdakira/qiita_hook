@@ -31,3 +31,5 @@ _testmain.go
 /site
 /test/allow
 man/*.html
+
+tmp
