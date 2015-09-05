@@ -4,7 +4,7 @@
 brew install go
 brew install direnv
 go get github.com/zenazn/goji
-go run src/github.com/osdakira/qiita_hook/main.go
+go run main.go
 ```
 
 # godeps うまく動かない
